@@ -4,9 +4,6 @@ from apps import DespXVotos, gastosReceitasVotos, candidatos, municipios  # impo
 
 st.set_page_config(page_title="Streamlit Geospatial", layout="wide")
 
-
-# More icons can be found here: https://icons.getbootstrap.com
-
 apps = [
     {"func": candidatos.app, "title": "Candidatos", "icon": "people"},
     {"func": DespXVotos.app, "title": "Votos e Correlações", "icon": "file-bar-graph"},
