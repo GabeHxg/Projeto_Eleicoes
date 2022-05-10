@@ -13,7 +13,7 @@ def app():
     )
 
     ########### Set data ##########
-    full = pd.read_csv('CandidatosFull.csv')
+    full = pd.read_csv('candidatosFull.csv')
     full = full.drop(columns=(['Unnamed: 0','NR_CANDIDATO','NM_PARTIDO']))
 
 
