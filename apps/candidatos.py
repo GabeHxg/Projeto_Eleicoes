@@ -1,3 +1,4 @@
+from numpy import full
 import streamlit as st
 import pandas as pd
 import plotly.figure_factory as ff
@@ -56,7 +57,5 @@ def app():
                 color_discrete_sequence=px.colors.qualitative.T10, 
                 template="plotly_dark")
     st.plotly_chart(fig2, use_container_width=True)
-
-   
 
     
