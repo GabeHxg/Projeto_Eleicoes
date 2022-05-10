@@ -8,7 +8,7 @@ def app():
 
 
     ########### Set data ##########
-    full = pd.read_csv('CandidatosFull.csv')
+    full = pd.read_csv('candidatosFull.csv')
     main_df = full.drop(columns=(['Unnamed: 0','NR_CANDIDATO']))
     full = full.drop(columns=(['Unnamed: 0','NR_CANDIDATO','NM_PARTIDO']))
 
