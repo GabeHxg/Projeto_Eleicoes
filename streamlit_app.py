@@ -1,16 +1,17 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, upload  # import your app modules here
+from apps import DespXVotos, gastosReceitasVotos, candidatos, municipios  # import your app modules here
 
 st.set_page_config(page_title="Streamlit Geospatial", layout="wide")
 
-# A dictionary of apps in the format of {"App title": "App icon"}
+
 # More icons can be found here: https://icons.getbootstrap.com
 
 apps = [
-    {"func": home.app, "title": "Home", "icon": "house"},
-    {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
-    {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
+    {"func": candidatos.app, "title": "Candidatos", "icon": "people"},
+    {"func": DespXVotos.app, "title": "Votos e Correlações", "icon": "file-bar-graph"},
+    {"func": municipios.app, "title": "Votos e Municipios", "icon": "map"},
+    {"func": gastosReceitasVotos.app, "title": "Receitas e Despesas", "icon": "file-bar-graph"}
 ]
 
 titles = [app["title"] for app in apps]
@@ -26,22 +27,20 @@ else:
 
 with st.sidebar:
     selected = option_menu(
-        "Main Menu",
+        "Eleições 2018",
         options=titles,
         icons=icons,
-        menu_icon="cast",
+        menu_icon="menu-button-fill",
         default_index=default_index,
     )
 
-    st.sidebar.title("About")
+    st.sidebar.title("Sobre")
     st.sidebar.info(
         """
-        This web [app](https://share.streamlit.io/giswqs/streamlit-template) is maintained by [Qiusheng Wu](https://wetlands.io). You can follow me on social media:
-            [GitHub](https://github.com/giswqs) | [Twitter](https://twitter.com/giswqs) | [YouTube](https://www.youtube.com/c/QiushengWu) | [LinkedIn](https://www.linkedin.com/in/qiushengwu).
+        Esse [aplicativo](https://share.streamlit.io/gabrielhxg/eleicoes_streamlit) foi criado por [Gabriel Hxg](https://gabrielhxg.carrd.co/) 
+        como forma de apresentação do projeto de ciência de dados 'Eleições 2018'. 
         
-        Source code: <https://github.com/giswqs/streamlit-template>
-
-        More menu icons: <https://icons.getbootstrap.com>
+        Dados Fonte: [Prestação de contas eleitorais](https://dadosabertos.tse.jus.br/dataset/prestacao-de-contas-eleitorais-2018/resource/0ecf7548-55c6-4080-b989-50b0eeb790bf), [Resultados da votação](https://dadosabertos.tse.jus.br/dataset/resultados-2018/resource/459d3040-12a2-4b59-9d90-31bec1e3e40d)
     """
     )
 
