@@ -55,6 +55,7 @@ def app():
                             y='Votos recebidos',
                             log_x=(logx=='Sim'),
                             log_y=(logy=='Sim'),
+                            trendline="ols",
                             color_discrete_sequence=px.colors.qualitative.Set1, 
                             template="plotly_dark")
 
