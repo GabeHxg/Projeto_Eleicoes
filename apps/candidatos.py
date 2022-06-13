@@ -26,7 +26,7 @@ def app():
 
     # Select candidatos
     candList   = full[full.DS_CARGO.str.contains(cargString)].Candidato.to_list()
-    candidatos = st.multiselect('Selecione o Candidato',candList, candList[5:8])
+    candidatos = st.multiselect('Selecione o Candidato',candList, candList[3:8])
     
     def detalhesCandidato(candidatos):
         candString   = ''.join([(name + '|') for name in candidatos])[:-1]

@@ -20,7 +20,7 @@ def app():
 
     # Set Colunas
     int_cols = full.select_dtypes(exclude='object').columns.to_list()
-    cols = st.multiselect('Selecione as despesas',int_cols,int_cols[:6])
+    cols = st.multiselect('Selecione as despesas',int_cols,int_cols[:5])
 
     
     col1, col2, col3 = st.columns((3,1,1))
